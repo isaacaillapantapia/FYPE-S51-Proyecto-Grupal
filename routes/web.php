@@ -14,3 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/*
+Route::get('/bodega/{sucursal?}', function($sucursal="producto"){
+    return view('bodega',array(
+        "sucursal" => $sucursal
+    ));
+});*/
+
+
+Route::get('/bodega/{sucursal?}/{direccion?}', function($sucursal="Mi Bodega", $direccion="Stgo Centro"){
+    return view('bodega')
+    ->with('sucursal',$sucursal);
+});
+
+
+
